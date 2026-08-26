@@ -1,0 +1,160 @@
+.skills-section {
+  padding: 5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skills-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header .eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f97316;
+}
+
+.section-header h2 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0;
+  color: #fff;
+}
+
+.section-header .divider {
+  height: 6px;
+  width: 96px;
+  background: #f97316;
+  border-radius: 999px;
+  margin: 1.5rem auto 0;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.skill-card {
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.75rem;
+}
+
+.skill-card h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-card li {
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  position: relative;
+  padding-left: 0.9rem;
+}
+
+.skill-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 4px;
+  height: 4px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+.skill-bars {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #e4e4e7;
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar-label .pct {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.bar-track {
+  height: 8px;
+  background: #27272a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #f97316;
+  border-radius: 999px;
+  transition: width 1.2s ease-out;
+}
+
+.learning-box {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.learning-box h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fb923c;
+  margin: 0 0 0.75rem;
+}
+
+.learning-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  padding: 0.15rem 0.65rem;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 999px;
+}

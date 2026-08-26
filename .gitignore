@@ -1,0 +1,23 @@
+# Environment files - NEVER commit real secrets
+.env
+*.env
+!.env.example
+
+# Python
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Zips leftover from packaging
+*.zip

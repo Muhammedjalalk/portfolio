@@ -1,0 +1,124 @@
+.experience-section {
+  padding: 5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.experience-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.experience-section .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.experience-section .eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f97316;
+}
+
+.experience-section h2 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0;
+  color: #fff;
+}
+
+.experience-section .divider {
+  height: 6px;
+  width: 96px;
+  background: #f97316;
+  border-radius: 999px;
+  margin: 1.5rem auto 0;
+}
+
+.experience-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.col-heading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item {
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-date {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fb923c;
+}
+
+.timeline-date.muted {
+  color: #71717a;
+}
+
+.timeline-item h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0.25rem 0 0.15rem;
+}
+
+.timeline-item .org {
+  color: rgba(251, 146, 60, 0.7);
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem;
+}
+
+.timeline-item .desc {
+  color: #71717a;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.timeline-item ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  color: #71717a;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.timeline-item li {
+  margin-bottom: 0.4rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  padding: 0.15rem 0.65rem;
+  background: rgba(249, 115, 22, 0.08);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
