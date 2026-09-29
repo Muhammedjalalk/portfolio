@@ -5,6 +5,7 @@ beautifulsoup4==4.14.2
 certifi==2025.10.5
 charset-normalizer==3.4.4
 colorama==0.4.6
+whitenoise==6.11.0
 dj-database-url==3.1.2
 Django==5.2.8
 django-cors-headers==4.9.0
