@@ -145,11 +145,19 @@ USE_TZ = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('muhammedjalal928@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('ezmu pvdf xlqx')
-CONTACT_RECEIVER_EMAIL = os.environ.get('muhammedjalal928@gmail.com', EMAIL_HOST_USER)
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+CONTACT_RECEIVER_EMAIL = os.environ.get(
+    'CONTACT_RECEIVER_EMAIL',
+    EMAIL_HOST_USER
+)
+
+EMAIL_TIMEOUT = 15
 
 
 # Static files (CSS, JavaScript, Images)
