@@ -1,7 +1,8 @@
 import logging
-import resend
 
+import resend
 from django.conf import settings
+from django.utils.html import escape
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -27,49 +28,29 @@ def contact_create(request):
     # Save contact to database
     contact = serializer.save()
 
+    # Send email notification (a failure here should not break the response)
     try:
         resend.api_key = settings.RESEND_API_KEY
 
-        params = {
+        resend.Emails.send({
             "from": "onboarding@resend.dev",
             "to": [settings.CONTACT_RECEIVER_EMAIL],
+            "reply_to": contact.email,
             "subject": f"Portfolio contact: {contact.subject}",
             "html": f"""
                 <h2>New message from your portfolio</h2>
-
-                <p><strong>Name:</strong> {contact.name}</p>
-                <p><strong>Email:</strong> {contact.email}</p>
-                <p><strong>Subject:</strong> {contact.subject}</p>
-
+                <p><strong>Name:</strong> {escape(contact.name)}</p>
+                <p><strong>Email:</strong> {escape(contact.email)}</p>
+                <p><strong>Subject:</strong> {escape(contact.subject)}</p>
                 <h3>Message:</h3>
-                <p>{contact.message}</p>
-
-                <hr>
-
-                <p>
-                    You can reply directly to:
-                    <strong>{contact.email}</strong>
-                </p>
+                <p>{escape(contact.message).replace(chr(10), "<br>")}</p>
             """,
-        }
-
-        resend.Emails.send(params)
-
-        return Response(
-            {
-                "success": True,
-                "message": "Message sent successfully."
-            },
-            status=status.HTTP_201_CREATED,
-        )
+        })
 
     except Exception:
         logger.exception("Contact email failed to send")
 
-        return Response(
-            {
-                "success": False,
-                "message": "Message was saved, but email could not be sent."
-            },
-            status=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        )
+    return Response(
+        {"success": True, "message": "Message sent successfully."},
+        status=status.HTTP_201_CREATED,
+    )
