@@ -143,22 +143,12 @@ USE_I18N = True
 USE_TZ = True
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_USE_TLS = False
-
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY')
 
 CONTACT_RECEIVER_EMAIL = os.environ.get(
     'CONTACT_RECEIVER_EMAIL',
-    EMAIL_HOST_USER
+    'muhammedjalal928@gmail.com'
 )
-
-EMAIL_TIMEOUT = 15
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
@@ -170,9 +160,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
-
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
